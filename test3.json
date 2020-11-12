@@ -1,0 +1,142 @@
+[
+	{
+		"left": {
+			"type": "N",
+			"value": "S'"
+		},
+		"right": [
+			{
+				"type": "N",
+				"value": "E"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "E"
+		},
+		"right": [
+			{
+				"type": "N",
+				"value": "T"
+			},
+			{
+				"type": "N",
+				"value": "E'"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "E'"
+		},
+		"right": [
+			{
+				"type": "V",
+				"value": "+"
+			},
+			{
+				"type": "N",
+				"value": "T"
+			},
+			{
+				"type": "N",
+				"value": "E'"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "E'"
+		},
+		"right": [
+			{
+				"type": "E",
+				"value": "[Null]"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "T"
+		},
+		"right": [
+			{
+				"type": "N",
+				"value": "F"
+			},
+			{
+				"type": "N",
+				"value": "T'"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "T'"
+		},
+		"right": [
+			{
+				"type": "V",
+				"value": "*"
+			},
+			{
+				"type": "N",
+				"value": "F"
+			},
+			{
+				"type": "N",
+				"value": "T'"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "T'"
+		},
+		"right": [
+			{
+				"type": "E",
+				"value": "[Null]"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "F"
+		},
+		"right": [
+			{
+				"type": "V",
+				"value": "i"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "F"
+		},
+		"right": [
+			{
+				"type": "V",
+				"value": "l"
+			},
+			{
+				"type": "N",
+				"value": "E"
+			},
+			{
+				"type": "V",
+				"value": "r"
+			}
+		]
+	}
+]
