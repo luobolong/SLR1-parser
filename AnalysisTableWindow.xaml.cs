@@ -39,33 +39,32 @@ namespace SLR1
             v_symbols.Add(Grammar.D);
             List<Symbol> n_symbols = new List<Symbol>(MainWindow.analyser.grammar.N_Symbols.ToArray());
 
-            DataTable table = new DataTable();
+            DataTable analysisDataTable = new DataTable();
             DataColumn column1 = new DataColumn();
             column1.ColumnName = "State";
             column1.DataType = System.Type.GetType("System.String");
-            table.Columns.Add(column1);
+            analysisDataTable.Columns.Add(column1);
 
             foreach(var symbol in v_symbols)
             {
                 DataColumn action_column = new DataColumn();
                 action_column.ColumnName = symbol.ToString();
-                action_column.Caption = "action";
                 action_column.DataType = System.Type.GetType("System.String");
-                table.Columns.Add(action_column);
+                analysisDataTable.Columns.Add(action_column);
             }
             foreach(var symbol in n_symbols)
             {
                 DataColumn goto_column = new DataColumn();
                 goto_column.ColumnName = symbol.ToString();
                 goto_column.DataType = System.Type.GetType("System.String");
-                table.Columns.Add(goto_column);
+                analysisDataTable.Columns.Add(goto_column);
             }
 
             foreach(var key in dict.Keys)
             {
-                DataRow row = table.NewRow();
+                DataRow row = analysisDataTable.NewRow();
                 row["State"] = key.Name;
-                foreach(var column in table.Columns)
+                foreach(var column in analysisDataTable.Columns)
                 {
                     string column_name = column.ToString();
                     if (column_name.Equals("State"))
@@ -92,9 +91,9 @@ namespace SLR1
                             break;
                     }
                 }
-                table.Rows.Add(row);
+                analysisDataTable.Rows.Add(row);
             }
-            datagrid.ItemsSource = table.DefaultView;
+            datagrid.ItemsSource = analysisDataTable.DefaultView;
         }
     }
 }
