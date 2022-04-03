@@ -33,45 +33,37 @@ namespace SLR1
                 return;
             }
             datagrid.Items.Clear();
-            var dict = new Dictionary<State, Dictionary<Symbol, TableCell>>(MainWindow.analyser.analysisTable);
-            List<Symbol> symbols = new List<Symbol>(MainWindow.analyser.grammar.Symbols.ToArray());
-            List<Symbol> v_symbols = new List<Symbol>(MainWindow.analyser.grammar.V_Symbols.ToArray());
-            v_symbols.Add(Grammar.D);
-            List<Symbol> n_symbols = new List<Symbol>(MainWindow.analyser.grammar.N_Symbols.ToArray());
+            var dict = MainWindow.analyser.analysisTable;
+            List<Symbol> symbols = MainWindow.analyser.grammar.Symbols;
+            List<Symbol> v_n_symbols = new List<Symbol>();
+            v_n_symbols.AddRange(MainWindow.analyser.grammar.V_Symbols);
+            v_n_symbols.Add(Grammar.D);
+            v_n_symbols.AddRange(MainWindow.analyser.grammar.N_Symbols);
 
             DataTable analysisDataTable = new DataTable();
-            DataColumn column1 = new DataColumn();
-            column1.ColumnName = "State";
-            column1.DataType = System.Type.GetType("System.String");
-            analysisDataTable.Columns.Add(column1);
+            analysisDataTable.Columns.Add(new DataColumn() { ColumnName = "State", DataType = System.Type.GetType("System.String") });
 
-            foreach(var symbol in v_symbols)
+            for(int i = 0; i < v_n_symbols.Count; i++)
             {
-                DataColumn action_column = new DataColumn();
-                action_column.ColumnName = symbol.ToString();
-                action_column.DataType = System.Type.GetType("System.String");
-                analysisDataTable.Columns.Add(action_column);
+                analysisDataTable.Columns.Add(new DataColumn() { ColumnName = $"S{i + 1}", DataType = System.Type.GetType("System.String") });
             }
-            foreach(var symbol in n_symbols)
+
+            DataRow symbols_row = analysisDataTable.NewRow();
+            for(int i = 0; i < v_n_symbols.Count; i++)
             {
-                DataColumn goto_column = new DataColumn();
-                goto_column.ColumnName = symbol.ToString();
-                goto_column.DataType = System.Type.GetType("System.String");
-                analysisDataTable.Columns.Add(goto_column);
+                symbols_row[$"S{i + 1}"] = v_n_symbols[i].ToString();
             }
+            analysisDataTable.Rows.Add(symbols_row);
 
             foreach(var key in dict.Keys)
             {
                 DataRow row = analysisDataTable.NewRow();
                 row["State"] = key.Name;
-                foreach(var column in analysisDataTable.Columns)
+                for(int i = 1; i < analysisDataTable.Columns.Count; i++)
                 {
-                    string column_name = column.ToString();
-                    if (column_name.Equals("State"))
-                    {
-                        continue;
-                    }
-                    var cell = dict[key][symbols.Find(s => s.ToString().Equals(column_name))];
+                    string column_name = analysisDataTable.Columns[i].ToString();
+                    string symbol_name = v_n_symbols[i - 1].ToString();
+                    var cell = dict[key][symbols.Find(s => s.ToString().Equals(symbol_name))];
                     switch (cell.Type)
                     {
                         case TableCell.Types.ACC:

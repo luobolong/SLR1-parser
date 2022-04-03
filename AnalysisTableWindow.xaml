@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SLR1"
         mc:Ignorable="d"
-        Title="SLR (1) Table" Height="464.062" Width="640.624">
+        Title="SLR (1) Table" Height="460" Width="640">
     <Grid>
-        <DataGrid x:Name="datagrid" Margin="3" CanUserSortColumns="False" ItemsSource="{Binding}" IsReadOnly="True" AutoGenerateColumns="True"/>
+        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3" CanUserSortColumns="False" ItemsSource="{Binding}" IsReadOnly="True" AutoGenerateColumns="True" CanUserReorderColumns="False" CanUserResizeColumns="False"/>
     </Grid>
 </Window>
