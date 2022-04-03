@@ -1,0 +1,58 @@
+[
+  {
+    "left": {
+      "type": "N",
+      "value": "S'"
+    },
+    "right": [
+      {
+        "type": "N",
+        "value": "S"
+      }
+    ]
+  },
+  {
+    "left": {
+      "type": "N",
+      "value": "S"
+    },
+    "right": [
+      {
+        "type": "V",
+        "value": "a"
+      },
+      {
+        "type": "N",
+        "value": "E"
+      }
+    ]
+  },
+  {
+    "left": {
+      "type": "N",
+      "value": "E"
+    },
+    "right": [
+      {
+        "type": "V",
+        "value": "a"
+      },
+      {
+        "type": "N",
+        "value": "E"
+      }
+    ]
+  },
+  {
+    "left": {
+      "type": "N",
+      "value": "E"
+    },
+    "right": [
+      {
+        "type": "E",
+        "value": "[Null]"
+      }
+    ]
+  }
+]

@@ -1,0 +1,110 @@
+[
+	{
+		"left": {
+			"type": "N",
+			"value": "E'"
+		},
+		"right": [
+			{
+				"type": "N",
+				"value": "E"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "E"
+		},
+		"right": [
+			{
+				"type": "N",
+				"value": "E"
+			},
+			{
+				"type": "V",
+				"value": "+"
+			},
+			{
+				"type": "N",
+				"value": "T"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "E"
+		},
+		"right": [
+			{
+				"type": "N",
+				"value": "T"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "T"
+		},
+		"right": [
+			{
+				"type": "N",
+				"value": "T"
+			},
+			{
+				"type": "V",
+				"value": "*"
+			},
+			{
+				"type": "N",
+				"value": "F"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "T"
+		},
+		"right": [
+			{
+				"type": "N",
+				"value": "F"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "F"
+		},
+		"right": [
+			{
+				"type": "V",
+				"value": "("
+			},
+			{
+				"type": "N",
+				"value": "E"
+			},
+			{
+				"type": "V",
+				"value": ")"
+			}
+		]
+	},
+	{
+		"left": {
+			"type": "N",
+			"value": "F"
+		},
+		"right": [
+			{
+				"type": "V",
+				"value": "i"
+			}
+		]
+	}
+]
